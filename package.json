@@ -36,13 +36,13 @@
 		"webpack": "^4.46.0"
 	},
 	"scripts": {
-		"dev": "next dev -p 3000",
-		"build": "next build && next start -p 3000",
-		"export": "next build && next export",
-		"start": "next start",
-		"deploy": "next start -p $PORT",
-		"out-http-server": "cd out && http-server -p 4000",
-		"next-lint": "next lint"
+		"dev": "npm install; next dev -p 3000",
+		"build": "npm install; next build && next start -p 3000",
+		"export": "npm install; next build && next export",
+		"start": "npm install; next start",
+		"deploy": "next build && next export",
+		"out-http-server": "npm install; cd out && http-server -p 4000",
+		"next-lint": "npm install; next lint"
 	},
 	"author": "",
 	"license": "ISC",
