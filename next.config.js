@@ -4,23 +4,32 @@ const withSass = require("@zeit/next-sass");
 
 module.exports = withFonts(withSass({
 	env: {
-		orgName: "Next Boilerplate",
-		domainName: "https://main.ds41na5e80skr.amplifyapp.com",
-		primaryEmail: "",
-		googleAnalyticsID: "",
-		socialUrls: {
-			facebook: "",
-			instagram: "",
-			pinterest: "",
-			youtube: "",
-			linkedin: "",
-			tiktok: "",
+		analytics: {
+			googleAnalyticsID: "",
 		},
-		apiDomainDev: "",
-		apiDomainProd: "",
-		apiPath: "",
-		igAccessToken: "",
-		privacyPolicyKey: ""
+		api: {
+			devDomain: "",
+			prodDomain: "",
+			path: ""
+		},
+		domainName: "main.ds41na5e80skr.amplifyapp.com",
+		orgName: "Next Boilerplate",
+		socials: {
+			facebook: {
+				url: ""
+			},
+			instagram: {
+				url: "",
+				apiUrl: "",
+				apiAccessToken: ""
+			},
+			youtube: {
+				url: ""
+			},
+			linkedin: {
+				url: ""
+			},
+		},
 	},
 	// i18n: { // If internationalization is needed
 	// 	locales: [
