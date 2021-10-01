@@ -55,6 +55,7 @@ module.exports = withFonts(withSass({
 			fs: "empty"
 		} : null;
 		
-    	return config;
-	}
+		return config;
+	},
+	webpack5: false
 }));
