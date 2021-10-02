@@ -29,10 +29,10 @@ input[type="checkbox"]:checked+label i {
       line-height: 0;
       color: $input-green;
 
-      &::before {
-        @extend %fa-icon;
-        @extend .fas;
-        content: fa-content($fa-var-check);
+      &::before { // For Font Awesome
+        // @extend %fa-icon;
+        // @extend .fas;
+        // content: fa-content($fa-var-check);
       }
     }
   }

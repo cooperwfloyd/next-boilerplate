@@ -33,12 +33,12 @@
 
 // TEXT
 .external-link {
-  &::after {
-    @extend %fa-icon;
-    @extend .fas;
-    font-size: em(14);
-    margin-left: em(10);
-    content: fa-content($fa-var-external-link-alt);
+  &::after { // For Font Awesome
+    // @extend %fa-icon;
+    // @extend .fas;
+    // font-size: em(14);
+    // margin-left: em(10);
+    // content: fa-content($fa-var-external-link-alt);
   }
 }
 
