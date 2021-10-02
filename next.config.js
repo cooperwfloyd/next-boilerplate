@@ -9,27 +9,32 @@ module.exports = withFonts(withSass({
 		},
 		api: {
 			devDomain: "",
-			prodDomain: "",
-			path: ""
+			prodDomain: ""
 		},
+		brandPrimaryColor: "#000000",
 		domainName: "main.ds41na5e80skr.amplifyapp.com",
 		orgName: "Next Boilerplate",
-		socials: {
-			facebook: {
-				url: ""
+		orgNameShort: "Next",
+		socials: [
+			{
+				name: "facebook",
+				url: "https://facebook.com"
 			},
-			instagram: {
-				url: "",
+			{
+				name: "instagram",
+				url: "https://instagram.com",
 				apiUrl: "",
 				apiAccessToken: ""
 			},
-			youtube: {
-				url: ""
+			{
+				name: "linkedin",
+				url: "https://linkedin.com"
 			},
-			linkedin: {
-				url: ""
-			},
-		},
+			{
+				name: "youtube",
+				url: "https://youtube.com"
+			}
+		],
 	},
 	// i18n: { // If internationalization is needed
 	// 	locales: [
