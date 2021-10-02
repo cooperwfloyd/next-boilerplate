@@ -3,9 +3,9 @@ import Footer from "../../src/components/Footer";
 import Header from "../../src/components/Header";
 import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Link from "next/link";
-import projects from "./projects.json";
+import posts from "./posts.json"; // Example data
 
-const WorkPage = () => {
+const PostsPage = () => {
   return (
     <Global className="work" documentTitle="Dynamic">
       <ResponsiveNav/>
@@ -13,22 +13,10 @@ const WorkPage = () => {
       <main>
         <h1 className="screen-reader-only">List Page</h1>
         <section className="gallery">
-          {projects.map((project, index) => {
+          {posts.map((post, index) => {
             return (
               <article key={index}>
-                {project.name && <h2>{project.name}</h2>}
-                {
-                  project.stack
-                  &&
-                  <ul className="stack">
-                    {project.stack.map((value, index) => {
-                        return <li key={index}>{value}</li>
-                    })}
-                  </ul>
-                }
-                <div className="button-container">
-                    <Link href={`/work/${project.id}`}><a className="button">Read More</a></Link>
-                </div>
+                {post.id && post.title && <p><Link href={`/dynamic/${post.id}`}>{post.title}</Link></p>}
               </article>
             );
           })}
@@ -39,4 +27,4 @@ const WorkPage = () => {
   );
 }
 
-export default WorkPage;
+export default PostsPage;
