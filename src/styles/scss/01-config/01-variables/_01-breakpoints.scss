@@ -1,0 +1,16 @@
+$mp: 480; // Mobile portrait
+$ml: 624; // Mobile landscape
+$tp: 768; // Tablet portrait
+$tl: 1024; // Tablet landscape
+$dk: 1280; // Desktop
+$lf: 1920; // Large format
+
+$headerNavBreakpoint: 56 * $em-base;
+$footerNavBreakpoint: $dk;
+
+$globalContainerPadding: 4%;
+$globalContainerPaddingBreakpoint: $mp;
+$globalMinContentWidth: 320;
+$globalMaxContentWidth: $dk;
+$globalMaxFormWidth: $tp;
+$globalMaxReaderWidth: $tp;

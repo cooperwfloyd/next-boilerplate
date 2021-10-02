@@ -1,0 +1,23 @@
+@function remove-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function em($px) {
+  @return #{$px/$em-base}em;
+}
+
+@function rem($px) {
+  @return #{$px/$em-base}rem;
+}
+
+@function px($em) {
+  @return #{$em * $em-base}px;
+}
+
+@function em-px-num($em) {
+  @return $em * $em-base;
+}

@@ -1,0 +1,15 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  li {
+    & + li {
+      margin-left: 2em;
+    }
+  }
+}

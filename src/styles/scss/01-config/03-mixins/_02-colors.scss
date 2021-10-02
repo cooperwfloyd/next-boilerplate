@@ -1,0 +1,22 @@
+@mixin dark-mode {
+  @if($dark-mode) {
+    @media(prefers-color-scheme: dark) {
+      @content;
+    }
+  } @else {
+
+  }
+}
+
+@mixin clip-text-gradient($from, $to) {
+  background: linear-gradient(90deg, $from, $to);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 2px 20px lighten($black, 75);
+}

@@ -1,0 +1,38 @@
+blockquote {
+  position: relative;
+  margin: rem($mini-divider) 0;
+  padding-bottom: rem($mini-divider);
+  background-color: transparentize($black, 0.1);
+  border-radius: rem($global-border-radius);
+  @include container-padding;
+
+  * {
+    display: block;
+    color: $white;
+  }
+
+  &::before {
+    position: absolute;
+    content: "\201c";
+    font-size: em(48);
+    color: $white;
+  }
+
+  p {
+    position: relative;
+    font-style: italic;
+    font-size: em(17);
+    text-indent: rem($small-divider);
+  }
+
+  cite {
+    margin-top: rem($small-divider);
+    font-style: normal;
+    @include bold-body-font;
+
+    &::before {
+      content: "\2014";
+      padding-right: rem(5);
+    }
+  }
+}

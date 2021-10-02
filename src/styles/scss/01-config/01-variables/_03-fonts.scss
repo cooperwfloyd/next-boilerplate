@@ -1,0 +1,22 @@
+$globalFontSize: $em-base;
+$globalMinFontSize: $em-base;
+$globalMaxFontSize: $em-base;
+$globalLeadFontSize: $globalFontSize + 1;
+
+$global-light-body-font-weight: lighter;
+$global-regular-body-font-weight: normal;
+$global-bold-body-font-weight: bold;
+
+$global-light-heading-font-weight: lighter;
+$global-regular-heading-font-weight: normal;
+$global-bold-heading-font-weight: bold;
+
+$body-font: Helvetica Neue, Helvetica;
+$body-font-stack: $body-font, sans-serif, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$heading-font: Helvetica Neue, Helvetica;
+$heading-font-stack: $heading-font, sans-serif, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$alt-font: Roboto Mono;
+$alt-font-stack: $alt-font, monospace, -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-path: "/fonts/";

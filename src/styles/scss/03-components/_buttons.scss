@@ -1,0 +1,162 @@
+.button {
+  display: block;
+  padding: em(18) em(64);
+  border: none;
+  border-radius: 5px;
+  background-color: $global-button-background-color;
+  border: rem(2) solid $global-button-background-color;
+  color: $global-button-text-color;
+  font-family: $body-font-stack;
+  font-size: em(16);
+  text-align: center;
+  text-decoration: none;
+  transition: $global-button-transition;
+  @include bold-body-font;
+
+  &:hover {
+    background-color: $global-button-background-color-hover;
+    border-color: $global-button-background-color-hover;
+    transition: $global-button-transition;
+    cursor: pointer;
+
+    &::before, &::after {
+      transition: $global-button-transition;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  @include dark-mode {
+    background-color: $global-button-background-color-dark;
+    border-color: $global-button-background-color-dark;
+    color: $global-button-text-color-dark;
+
+    &:hover {
+      background-color: darken($global-button-background-color-dark, 10);
+      border-color: darken($global-button-background-color-dark, 10);
+      color: $global-button-text-color-dark;
+    }
+  }
+
+  &.inverted {
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+
+    &:hover {
+      background-color: darken($white, 15);
+      border-color: darken($white, 15);
+    }
+  }
+
+  &.neutral {
+    background-color: $global-button-background-color-neutral;
+    border-color: $global-button-background-color-neutral;
+    color: $global-button-text-color;
+
+    &:hover {
+      background-color: $global-button-background-color-neutral-hover;
+      border-color: $global-button-background-color-neutral-hover;
+    }
+
+    &.inverted {
+      background-color: $white;
+      border-color: $white;
+      color: $black;
+
+      &:hover {
+        background-color: darken($white, 15);
+        border-color: darken($white, 15);
+        color: $global-text-color;
+
+        @include dark-mode {
+          color: $global-text-color-dark;
+        }
+      }
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    color: $global-button-background-color;
+
+    &:hover {
+      background-color: $global-button-background-color;
+      border-color: $global-button-background-color;
+      color: $white;
+    }
+
+    &.neutral {
+      border-color: $global-button-background-color-neutral;
+      color: $global-button-background-color-neutral;
+
+      &:hover {
+        background-color: $global-button-background-color-neutral;
+        border-color: $global-button-background-color-neutral;
+        color: $white;
+      }
+    }
+
+    &.inverted {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+
+      &:hover {
+        background-color: $white;
+        border-color: $white;
+        color: $black;
+      }
+    }
+  }
+
+  &.done {
+    background-color: $input-green;
+    border-color: $input-green;
+    color: $white;
+
+    &:hover {
+      background-color: $input-green;
+      border-color: $input-green;
+      color: $white;
+    }
+  }
+}
+
+.button-group {
+  a {
+    display: inline-block;
+    margin: 0 rem($mini-divider) rem($mini-divider) 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+@media(max-width: rem(600)) {
+  .button {
+    width: 100%;
+  }
+
+  a.full-width {
+    display: block;
+  }
+
+  .button-group {
+    a {
+      display: block;
+      margin: 0;
+
+      & + a, &:last-of-type {
+        margin: rem($mini-divider) 0 0 0;
+      }
+    }
+  }
+}

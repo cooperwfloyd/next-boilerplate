@@ -1,0 +1,25 @@
+.hamburger-container {
+  display: flex;
+
+  @media(max-width: rem($tp)) {
+    justify-content: flex-end;
+  }
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.5rem;
+
+  * {
+    background-color: $black;
+    height: 2px;
+    border-radius: 5px;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
+  }
+}

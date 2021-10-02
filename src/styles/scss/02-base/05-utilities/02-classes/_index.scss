@@ -1,0 +1,71 @@
+// IMAGES 
+.lazy {
+  overflow: hidden;
+  -webkit-filter: blur(rem(10 * 2));
+  filter: blur(rem(10 * 2));
+}
+
+.max-content-width {
+  max-width: rem($globalMaxContentWidth);
+}
+
+.max-form-width {
+  max-width: rem($globalMaxFormWidth);
+}
+
+.max-reader-width {
+  max-width: rem($globalMaxReaderWidth);
+}
+
+.load-cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: $global-background-color;
+
+  @include dark-mode {
+    background-color: $global-background-color-dark;
+  }
+}
+
+// TEXT
+.external-link {
+  &::after {
+    @extend %fa-icon;
+    @extend .fas;
+    font-size: em(14);
+    margin-left: em(10);
+    content: fa-content($fa-var-external-link-alt);
+  }
+}
+
+.hyphenate {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.lead {
+  @include lead-font;
+}
+
+.underline {
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.space-paragraphs {
+  > p + p {
+    margin-top: rem($mini-divider);
+  }
+}
+
+.screen-reader-only {
+  @include screen-reader-only;
+}

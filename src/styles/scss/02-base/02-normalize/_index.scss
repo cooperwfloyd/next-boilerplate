@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-margin-before: 0;
+  margin-block-start: 0;
+  -webkit-margin-after: 0;
+  margin-block-end: 0;
+  -webkit-padding-start: 0;
+  padding-inline-start: 0;
+  -webkit-padding-end: 0;
+  padding-inline-end: 0;
+  -webkit-padding-before: 0;
+  padding-block-start: 0;
+  -webkit-padding-after: 0;
+  padding-block-end: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0;
+  margin-inline-end: 0;
+  color: $global-text-color;
+
+  @include dark-mode {
+    color: $global-text-color-dark;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+
+  &::-moz-selection {
+    background-color: $global-selection-background-color;
+    color: $global-selection-color;
+
+    @include dark-mode {
+      background-color: $global-selection-background-color-dark;
+      color: $global-selection-color-dark;
+    }
+  }
+
+  &::selection {
+    background-color: $global-selection-background-color;
+    color: $global-selection-color;
+
+    @include dark-mode {
+        background-color: $global-selection-background-color-dark;
+        color: $global-selection-color-dark;
+    }
+  }
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+div,
+section,
+img,
+figure,
+picture,
+ul {
+  width: 100%;
+}
+
+img,
+video,
+figure,
+picture,
+label,
+embed,
+ul,
+li {
+  display: block;
+}
+
+img,
+video,
+figure,
+picture {
+  height: auto;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  transition: $global-transition;
+
+  &:hover {
+    transition: $global-transition;
+  }
+}
+
+nav {
+  ul {
+    list-style-type: none;
+  }
+}
+
+iframe {
+  border: none;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+
+  &::before {
+    content: open-quote;
+  }
+  
+  &::after {
+    content: close-quote;
+  }
+}
+
+figure, picture {
+  overflow: hidden;
+  position: relative;
+}
+
+pre {
+  margin: 0;
+}
+
+button {
+  appearance: none;
+  align-items: unset;
+  background-color: transparent;
+  margin: unset;
+  padding: unset;
+  border: none;
+  font: unset;
+  font-size: inherit;
+  @include body-font-stack;
+  @include regular-body-font;
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:focus, > *:focus {
+    outline: none;
+  }
+
+  &:focus > * {
+    box-shadow: 0 0 0 2px #0061C7; /* keyboard-only focus styles */
+    border-radius: 2px;
+  }
+}

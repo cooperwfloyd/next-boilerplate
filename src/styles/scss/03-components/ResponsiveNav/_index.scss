@@ -1,0 +1,117 @@
+.responsive-nav {
+  a {
+    visibility: hidden;
+  }
+
+  .header {
+    background-color: transparent;
+    padding: #{rem($em-base * 2)} #{$globalContainerPadding * 2} 0 #{$globalContainerPadding * 2};
+
+    @media(max-width: rem($tp)) {
+      padding: #{$globalContainerPadding * 2} #{$globalContainerPadding * 2} 0 #{$globalContainerPadding * 2};
+    }
+
+    @media(max-width: rem($ml)) {
+      padding: #{$globalContainerPadding} #{$globalContainerPadding} 0 #{$globalContainerPadding};
+    }
+
+    .logo {
+      justify-content: flex-end;
+
+      @media(max-width: rem($tp)) {
+        justify-content: flex-start;
+      }
+    }
+
+    .social {
+      display: none;
+    }
+  }
+
+  svg {
+    path {
+      fill: $white;
+    }
+  }
+
+  .hamburger-menu {
+    @media(max-width: rem($tp)) {
+      align-self: flex-end;
+    }
+
+    * {
+      background-color: $white;
+    }
+    
+    *:nth-child(1) {
+      transform: rotate(45deg);
+      position: relative;
+      top: 6px;
+    }
+    
+    *:nth-child(2) {
+      opacity: 0;
+      margin: 0;
+    }
+    
+    *:nth-child(3) {
+      transform: rotate(-45deg);
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $black;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    bottom: 100%;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    transition: 0.4s top ease, 0.4s bottom ease;
+    z-index: -1;
+
+    @media(max-width: rem($tp)) {
+      left: 50%;
+      right: 0;
+    }
+
+    @media(max-width: rem($ml)) {
+      background-color: transparentize($black, 0.1);
+      top: 0;
+      left: 100%;
+      bottom: 0;
+      transition: 0.2s left ease, 0.2s right ease;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    text-align: center;
+
+    li {
+      margin: 1em 0;
+    }
+
+    a {
+      @include focus;
+    }
+  }
+  
+  .social {
+    display: flex;
+    justify-content: center;
+    padding: $globalContainerPadding;
+
+    li {
+      padding: $globalContainerPadding;
+    }
+  }
+}

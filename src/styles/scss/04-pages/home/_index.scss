@@ -1,0 +1,15 @@
+html.home {
+  h1 {
+    @include variable-font(4em, 9em);
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .lead {
+        margin-top: 1.5em;
+    }
+  }
+}

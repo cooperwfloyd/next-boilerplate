@@ -1,0 +1,141 @@
+html {
+  body {
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    #__next {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+
+      > *:not(.responsive-nav) {
+        position: relative;
+        z-index: 1;
+      }
+      
+      > header {
+        @media(max-width: rem($headerNavBreakpoint)) {
+          .logo {
+            justify-content: flex-start;
+          }
+
+          .main-nav {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.open {
+    body {
+      #__next {
+        .responsive-nav {
+          a {
+            visibility: visible;
+          }
+
+          .nav {
+            top: 0;
+            bottom: 0;
+            opacity: 1;
+
+            @media(max-width: rem($ml)) {
+              right: 0;
+              left: 0;
+            }
+          }
+
+          @media(max-width: rem($ml)) {
+            .nav {
+              z-index: 3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0 auto;
+
+  &.content, .content {
+    @include container-padding;
+  }
+
+  &.content {
+    margin: 2rem auto 0 auto;
+  }
+
+  .content {
+    margin: 0 auto;
+  }
+
+  p, ul {
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: .05em;
+      text-underline-offset: .25em;
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+
+    li {
+      &::before {
+        position: relative;
+        padding-right: em(5);
+        font-size: em(18);
+        content: "\2022";
+      }
+    }
+
+  > ul {
+      li {
+        &::before {
+          top: em(-2);
+          font-size: em(10);
+          content: "\25CB";
+        }
+      }
+    }
+  }
+}
+
+figure, picture {
+  &.relative {
+    img {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+  }
+}
+
+picture {
+  transition: all 0s linear;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    bottom: 0;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@import "01-forms/index";

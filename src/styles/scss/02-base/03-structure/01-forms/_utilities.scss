@@ -1,0 +1,59 @@
+.required {
+  &::after {
+    content: "*";
+    font-family: helvetica;
+    padding-left: .25em;
+    color: rgb(175,0,0);
+  }
+}
+
+[type="submit"] {
+  margin-top: 2em;
+
+  @media(max-width: rem(600)) {
+    width: 100%;
+  }
+}
+
+.inverted-form-field {
+  border-color: $white;
+  border-width: 1px;
+  color: $white;
+}
+
+.inverted-form-field::-webkit-input-placeholder {
+  color: $white;
+}
+
+.inverted-form-field::-moz-placeholder {
+  color: $white;
+}
+
+.inverted-form-field:-ms-input-placeholder {
+  color: $white;
+}
+
+.inverted-form-field::-ms-input-placeholder {
+  color: $white;
+}
+
+.inverted-form-field::placeholder {
+  color: $white;
+}
+
+.confirmation {
+  color: #2c6d50;
+  text-align: center;
+}
+
+.hide-confirmation {
+  display: none;
+}
+
+.error {
+  font-weight: bold;
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}

@@ -1,0 +1,38 @@
+fieldset {
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  .field {
+    width: 100%;
+    margin: 0 1rem;
+  }
+  
+  & + fieldset {
+    margin-top: 2em;
+  }
+
+  @media(max-width: rem(600)) {
+    .row {
+      flex-direction: column;
+      margin: 0;
+      width: 100%;
+    }
+
+    .field {
+      margin: 0;
+
+      & + .field {
+        margin-top: 1rem;
+      }
+    }
+
+    & + fieldset {
+      margin-top: 1em;
+    }
+  }
+}

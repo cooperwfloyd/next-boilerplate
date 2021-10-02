@@ -1,0 +1,33 @@
+@mixin radio {
+  input[type="radio"] {
+    display: none;
+    position: relative;
+    top: -2px;
+    margin: 0;
+    margin-right: 3px;
+  }
+
+  input[type="radio"]:checked+label i {
+    visibility: visible;
+  }
+
+  .radio {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    padding: 2px;
+    border: 2px solid $light-gray;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    top: 7px;
+
+    i {
+      visibility: hidden;
+    }
+
+    &+label {
+      font-family: $lightFont;
+    }
+  }
+}

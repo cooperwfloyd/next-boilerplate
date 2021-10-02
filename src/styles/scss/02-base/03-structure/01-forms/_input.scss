@@ -1,0 +1,71 @@
+label {
+  font-weight: $global-bold-body-font-weight;
+
+  & + input, & + textarea {
+    margin-top: .5em;
+  }
+}
+
+textarea {
+  width: 100% !important;
+}
+
+input[type="email"], input[type="tel"], input[type="text"], input[type="password"], textarea {
+  display: block;
+  font-family: $body-font-stack;
+  @include regular-body-font;
+  background-color: $white;
+  border: none;
+  border: 1px solid $light-gray;
+  padding: 1em;
+  border-radius: 2px;
+  text-overflow: ellipsis;
+  letter-spacing: 0px;
+  font-size: 1rem;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.3s linear, border-color 0.2s linear;
+  -webkit-appearance: none;
+
+  &::-webkit-input-placeholder {
+    color: $light-gray;
+  }
+
+  &::-ms-input-placeholder {
+    color: $light-gray;
+  }
+
+  &:-ms-input-placeholder {
+    color: $light-gray;
+  }
+
+  &::-moz-placeholder {
+    color: $light-gray;
+  }
+
+  &::placeholder {
+    color: $light-gray;
+  }
+  
+  &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill::first-line {
+    // border: 1px solid $light-gray;
+    -webkit-text-fill-color: $black;
+    color: $black;
+    box-shadow: 0 0 0px 0px #000 inset;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+    font-size: 1rem;
+    font-family: $body-font-stack;
+  }
+  
+  &:focus, &:-webkit-autofill:focus {
+    outline: none;
+    outline-offset: 0px;
+    box-shadow: 0px 0px 5px transparentize(black, 0.9);
+  }
+}
+
+// select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+
+// }

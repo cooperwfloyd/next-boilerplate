@@ -1,0 +1,41 @@
+html {
+  font-family: $body-font-stack;
+  font-size: em($globalFontSize);
+  line-height: em($globalFontSize * 2);
+  @include regular-body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include bold-body-font;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $body-font-stack;
+}
+
+h1, .h1 {
+  font-family: $heading-font-stack;
+  @include variable-font(4em, 7em);
+  line-height: 1.2em;
+}
+
+h2, .h2 {
+  @include variable-font(3em, 5em);
+  line-height: 1.4em;
+}
+
+h3, .h3 {
+  @include variable-font(1.5em, 1.75em);
+}
+
+h4, .h4 {
+  @include variable-font(1.25em, 1.5em);
+}
+
+h5, .h5 {
+  @include variable-font(1em, 1.25em);
+}
+
+h6, .h6 {
+  font-size: 1em;
+}

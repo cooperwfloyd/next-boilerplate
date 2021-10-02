@@ -1,0 +1,32 @@
+select {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0 auto;
+  border:  rem(2) solid $black;
+  border-radius: rem($global-border-radius);
+  color: $black;
+  text-align: center;
+  font-family: $body-font-stack;
+  font-size: em(18);
+  padding: rem(10) rem(20);
+  background-image: url("/assets/images/icons/select_dropdown_arrow.svg");
+  background-position: right rem(10) top 50%, 0 0;
+  background-repeat: no-repeat;
+  background-size: rem(10);
+  min-width: rem(200);
+
+  &:active
+  {
+    background-color:transparent;
+    border: rem(2) solid $black;
+  }
+
+  &:focus
+  {
+    background-color:transparent;
+    border: rem(2) solid $black;
+  }
+}
