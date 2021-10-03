@@ -1,4 +1,6 @@
 .responsive-nav {
+  z-index: 2;
+
   a {
     visibility: hidden;
   }
@@ -75,11 +77,6 @@
     width: 100%;
     transition: 0.4s top ease, 0.4s bottom ease;
     z-index: -1;
-
-    @media(max-width: rem($tp)) {
-      left: 50%;
-      right: 0;
-    }
 
     @media(max-width: rem($ml)) {
       background-color: transparentize($black, 0.1);
