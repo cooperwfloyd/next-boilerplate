@@ -2,10 +2,12 @@ import Global from "../src/components";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ResponsiveNav from "../src/components/ResponsiveNav";
+import Meta from "../src/components/Meta";
 
 const HomePage = () => {
   return (
-    <Global className="home" documentTitle="Home">
+    <Global className="home">
+      <Meta/>
       <ResponsiveNav/>
       <Header/>
         <main>

@@ -6,8 +6,7 @@ const Global = props => {
 
   useEffect(() => {
     props.className && setCheckPageClasses(setPageClasses(props.className));
-    document.title = props.documentTitle ? `${props.documentTitle} | ${process.env.orgName}` : process.env.orgName;
-  }, [props.className, props.documentTitle]);
+  }, [props.className]);
 
   return props.className ? checkPageClasses && props.children : props.children;
 }

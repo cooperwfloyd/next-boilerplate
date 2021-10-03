@@ -3,6 +3,7 @@ import Footer from "../../src/components/Footer";
 import Header from "../../src/components/Header";
 import Input from "../../src/components/Input";
 import ResponsiveNav from "../../src/components/ResponsiveNav";
+import Meta from "../../src/components/Meta";
 import Textarea from "../../src/components/Textarea";
 import {useInput} from "../../src/scripts/validations";
 
@@ -11,8 +12,9 @@ const ContactPage = () => {
   const {value: message, bind: bindMessage} = useInput("", "message");
 
   return (
-    <Global className="contact" documentTitle="Contact">
+    <Global className="contact">
       <ResponsiveNav/>
+      <Meta title="Contact" description="Let's get in touch."/>
       <Header/>
       <main>
         <section className="content">
