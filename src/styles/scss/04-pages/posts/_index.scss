@@ -6,10 +6,9 @@ html.posts {
     section {
       padding: #{$globalContainerPadding / 2};
     }
-  }
 
-
-  h1, li {
-    padding:  0 #{$globalContainerPadding / 2};
+    h1, li {
+      padding:  0 #{$globalContainerPadding / 2};
+    }
   }
 }
