@@ -28,14 +28,14 @@ const ResponsiveNav = () => {
             </Link>
           </li>
           <li onClick={isOpen}>
-            <Link href="/posts/1">
+            <Link href="/posts/json/1">
               <a>
                 <span tabIndex={-1}>Post One</span>
               </a>
             </Link>
           </li>
           <li onClick={isOpen}>
-            <Link href="/posts/2">
+            <Link href="/posts/json/2">
               <a>
                 <span tabIndex={-1}>Post Two</span>
               </a>

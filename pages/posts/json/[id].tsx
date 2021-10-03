@@ -1,10 +1,10 @@
-import Global from "../../src/components";
-import ResponsiveNav from "../../src/components/ResponsiveNav";
-import Header from "../../src/components/Header";
-import Footer from "../../src/components/Footer";
-import Meta from "../../src/components/Meta";
+import Global from "../../../src/components";
+import ResponsiveNav from "../../../src/components/ResponsiveNav";
+import Header from "../../../src/components/Header";
+import Footer from "../../../src/components/Footer";
+import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
-import postsData from "../../src/content/posts/index.json"; // Example data
+import postsData from "../../../src/content/json/posts/index.json"; // Example data
 
 interface post {
   id: string | number,

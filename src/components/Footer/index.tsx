@@ -11,10 +11,10 @@ const Footer = () => {
           <Link href="/posts">Posts</Link>
         </li>
         <li>
-          <Link href="/posts/1">Post One</Link>
+          <Link href="/posts/json/1">Post One</Link>
         </li>
         <li>
-          <Link href="/posts/2">Post Two</Link>
+          <Link href="/posts/json/2">Post Two</Link>
         </li>
         <li>
           <Link href="/contact">Contact</Link>

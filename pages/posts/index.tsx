@@ -5,7 +5,7 @@ import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Meta from "../../src/components/Meta";
 import Link from "next/link";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
-import postsData from "../../src/content/posts/index.json"; // Example data
+import postsData from "../../src/content/json/posts/index.json"; // Example data
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -28,7 +28,7 @@ const PostsPage = ({pageTitle, pageDescription, postsData}: InferGetStaticPropsT
           <h1>{pageTitle}</h1>
           {postsData.map((post, index) => {
             return (
-              <p key={index}>{post.id && post.title && <Link href={`/posts/${post.id}`}>{post.title}</Link>}</p>
+              <p key={index}>{post.id && post.title && <Link href={`/posts/json/${post.id}`}>{post.title}</Link>}</p>
             );
           })}
         </section>
