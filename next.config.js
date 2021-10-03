@@ -48,12 +48,15 @@ module.exports = withFonts(withSass({
 		]
 	},
 	webpack: (config, {isServer}) => {
-    	config.module.rules.push({
+    config.module.rules.push({
 			test: /\.svg$/,
 			issuer: {
 				test: /\.(js|ts)x?$/,
 			},
 			use: ["@svgr/webpack"]
+		}, {
+			test: /\.md$/i,
+			use: 'raw-loader',
 		});
 
 		!isServer ? config.node = {
