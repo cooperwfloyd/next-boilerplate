@@ -4,11 +4,10 @@ import Header from "../../src/components/Header";
 import Footer from "../../src/components/Footer";
 import Meta from "../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
-import postsData from "./posts.json"; // Example data
-import ReactHTMLParser from "react-html-parser";
+import postsData from "../../src/content/posts/index.json"; // Example data
 
 interface post {
-  id: number,
+  id: string | number,
   title: string,
   body: string
 }
@@ -40,13 +39,13 @@ export const getStaticProps: GetStaticProps = async context => {
 
 const PostPage = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Global className="work client">
+    <Global className="post">
       <Meta title={post.title} description={post.body}/>
       <ResponsiveNav/>
       <Header/>
       <main className="max-content-width">
         <section className="intro">
-          {<h1>{post.title}</h1>}
+          {post.title && <h1>{post.title}</h1>}
           {post.body && <p>{post.body}</p>}
         </section>
       </main>

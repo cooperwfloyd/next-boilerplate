@@ -1,25 +1,11 @@
 import Link from "next/link";
 import {useEffect} from "react";
 import Header, {isOpen} from "../Header";
-import SocialLinks from "../SocialLinks";
 import $ from "jquery";
 
 const ResponsiveNav = () => {
   useEffect(() => {
     $(".responsive-nav .hamburger-menu").attr("tabindex", -1);
-
-    setInterval(() => {
-      const $selector = $(".responsive-nav img.active");
-      if($selector.next().length) {
-        $selector.next().addClass("active");
-      } else {
-        $(".responsive-nav img").first().addClass("active");
-      }
-
-      setTimeout(() => {
-        $selector.toggleClass("active");
-      }, 1000);
-    }, 4000);
   });
 
   return (
@@ -55,9 +41,13 @@ const ResponsiveNav = () => {
               </a>
             </Link>
           </li>
-        </ul>
-        <ul className="social">
-          <SocialLinks/>
+          <li onClick={isOpen}>
+            <Link href="/contact">
+              <a>
+                <span tabIndex={-1}>Contact</span>
+              </a>
+            </Link>
+          </li>
         </ul>
       </section>
     </nav>

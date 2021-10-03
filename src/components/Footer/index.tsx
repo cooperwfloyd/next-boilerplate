@@ -16,9 +16,12 @@ const Footer = () => {
         <li>
           <Link href="/posts/2">Post Two</Link>
         </li>
+        <li>
+          <Link href="/contact">Contact</Link>
+        </li>
       </ul>
       <div className="copyright">
-        <p>&copy; {new Date().getFullYear()} {process.env.orgName}. All Rights Reserved. <Link href="/privacy/">Privacy Policy</Link></p>
+        <p>&copy; {new Date().getFullYear()} Cooper Floyd. All Rights Reserved.</p>
       </div>
     </footer>
   );

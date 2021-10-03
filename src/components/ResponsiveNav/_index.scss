@@ -10,7 +10,7 @@
     padding: #{rem($em-base * 2)} #{$globalContainerPadding * 2} 0 #{$globalContainerPadding * 2};
 
     @media(max-width: rem($tp)) {
-      padding: #{$globalContainerPadding * 2} #{$globalContainerPadding * 2} 0 #{$globalContainerPadding * 2};
+      padding: #{$globalContainerPadding};
     }
 
     @media(max-width: rem($ml)) {
@@ -25,7 +25,7 @@
       }
     }
 
-    .social {
+    .main-nav {
       display: none;
     }
   }
@@ -66,7 +66,7 @@
   .nav {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     background-color: $black;
     position: fixed;
     top: -100%;

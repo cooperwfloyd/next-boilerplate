@@ -1,6 +1,5 @@
 import {forwardRef, useEffect} from "react";
 import Link from "next/link";
-import SocialLinks from "../SocialLinks";
 import $ from "jquery";
 import Logo from "../../../public/assets/images/logos/logo.svg";
 
@@ -14,7 +13,11 @@ const LogoComponent = forwardRef(function LogoComponent(props, ref: any) {
 
 export const HeaderLogo = () => {
   return (
-    <div className="logo"><Link href="/" passHref><LogoComponent/></Link></div>
+    <div className="logo">
+      <Link href="/" passHref>
+        <LogoComponent/>
+      </Link>
+    </div>
   );
 }
 
@@ -68,28 +71,29 @@ const Header = props => {
   });
   
   return (
-    <>
-      <header className="header" id={props.id}>
-        <nav>
-          <div className="hamburger-container"><HamburgerMenu/></div>
-          <HeaderLogo/>
-          <ul className="main-nav">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/posts">Posts</Link>
-            </li>
-            <li>
-              <Link href="/posts/1">Post One</Link>
-            </li>
-            <li>
-              <Link href="/posts/2">Post Two</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </>
+    <header className="header" id={props.id}>
+      <nav>
+        <div className="hamburger-container"><HamburgerMenu/></div>
+        <HeaderLogo/>
+        <ul className="main-nav">
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/posts">Posts</Link>
+          </li>
+          <li>
+            <Link href="/posts/1">Post One</Link>
+          </li>
+          <li>
+            <Link href="/posts/2">Post Two</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
