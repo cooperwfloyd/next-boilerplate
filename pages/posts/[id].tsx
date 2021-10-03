@@ -3,7 +3,7 @@ import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Header from "../../src/components/Header";
 import Footer from "../../src/components/Footer";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
-import posts from "./posts.json"; // Example data
+import postsData from "./posts.json"; // Example data
 import ReactHTMLParser from "react-html-parser";
 
 interface post {
@@ -13,7 +13,7 @@ interface post {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const ids = posts.map(index => {
+  const ids = postsData.map(index => {
     return {
       params: {
         id: index.id.toString()
@@ -28,7 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const post: post = posts.find(post => post.id.toString() === context.params.id);
+  const post: post = postsData.find(post => post.id.toString() === context.params.id);
   
   return {
     props: {

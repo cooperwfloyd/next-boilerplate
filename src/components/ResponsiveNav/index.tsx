@@ -35,37 +35,25 @@ const ResponsiveNav = () => {
             </Link>
           </li>
           <li onClick={isOpen}>
-            <Link href="/portfolio">
+            <Link href="/posts">
               <a>
-                <span tabIndex={-1}>Portfolio</span>
+                <span tabIndex={-1}>Posts</span>
               </a>
             </Link>
           </li>
           <li onClick={isOpen}>
-            <Link href="/services">
+            <Link href="/posts/1">
               <a>
-                <span tabIndex={-1}>Services</span>
+                <span tabIndex={-1}>Post One</span>
               </a>
             </Link>
           </li>
           <li onClick={isOpen}>
-            <Link href="/about">
+            <Link href="/posts/2">
               <a>
-                <span tabIndex={-1}>About</span>
+                <span tabIndex={-1}>Post Two</span>
               </a>
             </Link>
-          </li>
-          <li onClick={isOpen}>
-            <Link href="/contact">
-              <a>
-                  <span tabIndex={-1}>Contact</span>
-              </a>
-            </Link>
-          </li>
-          <li onClick={isOpen}>
-            <a href={process.env.instagramUrl} target="_blank" rel="noopener noreferrer">
-              <span tabIndex={-1}>Instagram</span>
-            </a>
           </li>
         </ul>
         <ul className="social">

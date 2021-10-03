@@ -73,8 +73,19 @@ const Header = props => {
         <nav>
           <div className="hamburger-container"><HamburgerMenu/></div>
           <HeaderLogo/>
-          <ul className="social">
-            <SocialLinks/>
+          <ul className="main-nav">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/posts">Posts</Link>
+            </li>
+            <li>
+              <Link href="/posts/1">Post One</Link>
+            </li>
+            <li>
+              <Link href="/posts/2">Post Two</Link>
+            </li>
           </ul>
         </nav>
       </header>

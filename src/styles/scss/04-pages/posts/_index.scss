@@ -1,0 +1,15 @@
+html.posts {
+  main {
+    padding: #{$globalContainerPadding * 2} #{$globalContainerPadding / 2};
+    margin: 0;
+
+    section {
+      padding: #{$globalContainerPadding / 2};
+    }
+  }
+
+
+  h1, li {
+    padding:  0 #{$globalContainerPadding / 2};
+  }
+}

@@ -5,19 +5,16 @@ const Footer = () => {
     <footer>
       <ul className="footer-nav">
         <li>
-          <Link href="/">Lorem</Link>
+          <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/">Ipsum</Link>
+          <Link href="/posts">Posts</Link>
         </li>
         <li>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer">Dolor</a>
+          <Link href="/posts/1">Post One</Link>
         </li>
         <li>
-          <Link href="/">Sit</Link>
-        </li>
-        <li>
-          <Link href="/">Amet</Link>
+          <Link href="/posts/2">Post Two</Link>
         </li>
       </ul>
       <div className="copyright">

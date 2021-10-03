@@ -22,11 +22,6 @@
   .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    @media(max-width: rem($tp)) {
-      justify-content: flex-start;
-    }
     
     a {
       display: flex;
