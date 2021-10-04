@@ -1,12 +1,16 @@
 html.home {
-  h1 {
-    @include variable-font(4em, 9em);
-  }
-  
   main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    h1 {
+      @include variable-font(3em, 6em);
+    }
+
+    h1, .lead {
+      text-align: center;
+    }
 
     .lead {
         margin-top: 1.5em;

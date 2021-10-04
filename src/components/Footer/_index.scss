@@ -3,8 +3,10 @@ footer {
 
   .footer-nav {
     display: flex;
+    justify-content: center;
     
     @media(max-width: rem($tp)) {
+      align-items: center;
       flex-direction: column;
       padding: $globalContainerPadding 0;
     }
@@ -22,5 +24,6 @@ footer {
   .copyright {
     padding: 0 $globalContainerPadding 2em $globalContainerPadding;
     font-size: 90%;
+    text-align: center;
   }
 }

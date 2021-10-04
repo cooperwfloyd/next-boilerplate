@@ -1,3 +1,8 @@
 html.contact {
-  
+  main {
+    h1 {
+      @include variable-font(3em, 6em);
+      margin-bottom: .5em;
+    }
+  }
 }
