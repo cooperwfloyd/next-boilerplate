@@ -1,10 +1,10 @@
 import $ from "jquery";
 
 const toggleExpand = (target, expand = target) => {
-  if($(target).closest(".client").length > 0 && !$(target).closest(".client").hasClass("expanded")) {
-    $(".home .portfolio .client").removeClass("expanded");
-    $(".home .portfolio .client .expander-button").attr("aria-pressed", "false");
-    $(".home .portfolio .client .expander-button").attr("aria-expanded", "false");
+  if($(target).closest(".expand-parent").length > 0 && !$(target).closest(".expand-parent").hasClass("expanded")) {
+    $(".expand-parent").removeClass("expanded");
+    $(".expand-parent .expander-button").attr("aria-pressed", "false");
+    $(".expand-parent .expander-button").attr("aria-expanded", "false");
     $(expand).toggleClass("expanded");
     // $(expand).children("figure").animate({
     //     width: "toggle"
