@@ -7,3 +7,5 @@ Run `npm install` to install the project dependencies. Each NPM script except fo
 To spin up the dev server for this project, run `npm run dev`. This will start the dev server on port 3000.
 
 To build this project, run `npm run deploy`. This will output your project into the `out` directory. The built project can be served by running `npm run out-http-server`.
+
+This project optionally uses TypeScript. To turn TypeScript on for any JS file, use the extension `.ts` — or `.tsx` for JSX files. To remove TypeScript from use in a file, change the extension to `.js` or `.jsx` and remove the file's TypeScript code.
