@@ -79,7 +79,6 @@
     z-index: -1;
 
     @media(max-width: rem($ml)) {
-      background-color: transparentize($black, 0.1);
       top: 0;
       left: 100%;
       bottom: 0;
