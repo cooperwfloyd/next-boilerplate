@@ -38,7 +38,6 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const PostPage = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(post);
 
   return (
     <Global className="post">

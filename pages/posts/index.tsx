@@ -5,6 +5,7 @@ import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Meta from "../../src/components/Meta";
 import Link from "next/link";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
+import postsData from "../../src/content/json/posts/index.json"; // Example data
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
