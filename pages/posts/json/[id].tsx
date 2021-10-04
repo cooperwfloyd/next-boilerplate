@@ -5,13 +5,12 @@ import Footer from "../../../src/components/Footer";
 import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
 import {join} from "path";
-import getContent from "../../../src/scripts/getContent";
-import getAllContent from "../../../src/scripts/getAllContent";
+import {getContentIds, getContentById} from "../../../src/scripts/getContent";
 
 const jsonContentDir = `${process.env.jsonContentDir}posts/`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getAllContent(join(process.cwd(), jsonContentDir));
+  const posts = await getContentIds(join(process.cwd(), jsonContentDir));
 
   const postIds = posts.map(post => {
     return {
@@ -28,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const post = await getContent(join(process.cwd(), `${jsonContentDir}/${context.params.id}/index.json`));
+  const post = await getContentById({contentDir: (join(process.cwd(), jsonContentDir)), id: context.params.id});
 
   return {
     props: {

@@ -83,10 +83,10 @@ const Header = props => {
             <Link href="/posts">Posts</Link>
           </li>
           <li>
-            <Link href="/posts/json/1">Post One</Link>
+            <Link href="/posts/md/1">Post One</Link>
           </li>
           <li>
-            <Link href="/posts/json/2">Post Two</Link>
+            <Link href="/posts/md/2">Post Two</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>

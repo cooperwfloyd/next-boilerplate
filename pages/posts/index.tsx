@@ -5,19 +5,29 @@ import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Meta from "../../src/components/Meta";
 import Link from "next/link";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
-import postsData from "../../src/content/json/posts.json"; // Example data
+import {getContentList} from "../../src/scripts/getContent";
 
 export const getStaticProps: GetStaticProps = async () => {
+  const allPosts = await getContentList({
+    contentDir: `${process.env.mdContentDir}posts/`,
+    fields: [
+      "id",
+      "title"
+    ]
+  });
+
+  console.log(allPosts);
+
   return {
     props: {
       pageTitle: "All Posts",
-      pageDescription: "List of all blog posts",
-      postsData
+      pageDescription: "A list of all of the posts",
+      allPosts
     }
   }
 }
 
-const PostsPage = ({pageTitle, pageDescription, postsData}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const PostsPage = ({allPosts, pageTitle, pageDescription}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Global className="posts">
       <Meta title={pageTitle} description={pageDescription}/>
@@ -26,9 +36,9 @@ const PostsPage = ({pageTitle, pageDescription, postsData}: InferGetStaticPropsT
       <main>
         <section>
           <h1>{pageTitle}</h1>
-          {postsData.map((post, index) => {
+          {allPosts.map((post, index) => {
             return (
-              <p key={index}>{post.id && post.title && <Link href={`/posts/json/${post.id}`}>{post.title}</Link>}</p>
+              <p key={index}>{post.data.id && post.data.title && <Link href={`/posts/md/${post.data.id}`}>{post.data.title}</Link>}</p>
             );
           })}
         </section>
