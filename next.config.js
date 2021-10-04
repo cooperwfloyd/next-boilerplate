@@ -1,6 +1,8 @@
 const path = require("path");
 const withFonts = require("nextjs-fonts");
 const withSass = require("@zeit/next-sass");
+const domainName = "main.ds41na5e80skr.amplifyapp.com";
+const contentDir = "src/content/";
 
 module.exports = withFonts(withSass({
 	env: {
@@ -12,7 +14,7 @@ module.exports = withFonts(withSass({
 			prodDomain: ""
 		},
 		brandPrimaryColor: "#000000",
-		domainName: "main.ds41na5e80skr.amplifyapp.com",
+		domainName,
 		orgName: "Next Boilerplate",
 		orgNameShort: "Next",
 		socials: [
@@ -35,7 +37,18 @@ module.exports = withFonts(withSass({
 				url: "https://youtube.com"
 			}
 		],
+		mdContentDir: `${contentDir}/md/`,
+		jsonContentDir: `${contentDir}/json/`
 	},
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/',
+  //       permanent: true,
+  //     },
+  //   ]
+  // },
 	// i18n: { // If internationalization is needed
 	// 	locales: [
 	// 		"en-US"
@@ -44,7 +57,7 @@ module.exports = withFonts(withSass({
 	// },
 	images: {
 		domains: [
-			"main.ds41na5e80skr.amplifyapp.com",
+			domainName,
 		]
 	},
 	webpack: (config, {isServer}) => {

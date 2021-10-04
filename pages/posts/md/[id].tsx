@@ -4,46 +4,37 @@ import Header from "../../../src/components/Header";
 import Footer from "../../../src/components/Footer";
 import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
-import postsData from "../../../src/content/json/posts/index.json"; // Example data
-import {promises as fs} from "fs";
 import {join} from "path";
-import matter from "gray-matter";
 import marked from "marked";
 import ReactHtmlParser from "react-html-parser";
+import getContent from "../../../src/scripts/getContent";
+import getAllContent from "../../../src/scripts/getAllContent";
 
-interface post {
-  id: string | number,
-  title: string,
-  body: string
-}
+const mdContentDir = `${process.env.mdContentDir}posts/`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const ids = postsData.map(index => {
+  const posts = await getAllContent(join(process.cwd(), mdContentDir));
+
+  const postIds = posts.map(post => {
     return {
       params: {
-        id: index.id.toString()
+        id: post
       }
     }
   });
 
   return {
-    paths: ids,
-    fallback: false
+    paths: postIds,
+    fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const post: post = postsData.find(post => post.id.toString() === context.params.id);
-  const postPath = join(process.cwd(), `src/content/md/posts/${context.params.id}/index.md`);
-  const fileContents = await fs.readFile(postPath, "utf8");
-  const {data, content} = matter(fileContents);
-  
+  const post = await getContent(join(process.cwd(), `${mdContentDir}/${context.params.id}/index.md`));
+
   return {
     props: {
-      post: {
-        data,
-        content
-      }
+      post
     }
   }
 }

@@ -4,32 +4,32 @@ import Header from "../../../src/components/Header";
 import Footer from "../../../src/components/Footer";
 import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
-import postsData from "../../../src/content/json/posts/index.json"; // Example data
+import {join} from "path";
+import getContent from "../../../src/scripts/getContent";
+import getAllContent from "../../../src/scripts/getAllContent";
 
-interface post {
-  id: string | number,
-  title: string,
-  body: string
-}
+const jsonContentDir = `${process.env.jsonContentDir}posts/`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const ids = postsData.map(index => {
+  const posts = await getAllContent(join(process.cwd(), jsonContentDir));
+
+  const postIds = posts.map(post => {
     return {
       params: {
-        id: index.id.toString()
+        id: post
       }
     }
   });
 
   return {
-    paths: ids,
-    fallback: false
+    paths: postIds,
+    fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const post: post = postsData.find(post => post.id.toString() === context.params.id);
-  
+  const post = await getContent(join(process.cwd(), `${jsonContentDir}/${context.params.id}/index.json`));
+
   return {
     props: {
       post
@@ -38,15 +38,17 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 const PostPage = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(post);
+
   return (
     <Global className="post">
-      <Meta title={post.title} description={post.body}/>
+      <Meta title={post.title} description={post.description}/>
       <ResponsiveNav/>
       <Header/>
       <main className="max-content-width">
         <section className="intro">
           {post.title && <h1>{post.title}</h1>}
-          {post.body && <p>{post.body}</p>}
+          {post.body && post.body}
         </section>
       </main>
       <Footer/>
