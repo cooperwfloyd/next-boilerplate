@@ -98,6 +98,10 @@
 
     a {
       @include focus;
+
+      &, * {
+        color: $white;
+      }
     }
   }
   
