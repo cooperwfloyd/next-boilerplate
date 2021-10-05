@@ -1,5 +1,5 @@
 import {promises as fs} from "fs";
-import path, {join} from "path";
+import path from "path";
 import matter from "gray-matter";
 
 const getContentFile = async filePath => {
