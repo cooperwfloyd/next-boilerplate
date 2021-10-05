@@ -10,6 +10,28 @@ const getContentFile = async filePath => {
   }
 }
 
+const getMdFile = async filePath => {
+  try {
+    const contentFile = await getContentFile(filePath);
+    const {data, content} = matter(contentFile);
+    return {
+      data,
+      content
+    };
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+const getJsonFile = async filePath => {
+  try {
+    const contentFile = await getContentFile(filePath);
+    return JSON.parse(contentFile.toString());
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
 export const getContentFiles = async ({dir, extension = true}) => {
   try {
     const contentDir = await fs.readdir(dir);
@@ -23,56 +45,15 @@ export const getContentFiles = async ({dir, extension = true}) => {
 }
 
 export const getContentById = async ({contentDir, id, fields = []}) => {
-  let contentFile;
-  let filePath = `${contentDir}${id}`;
-
-  if(contentDir.includes("md")) {
-    contentFile = await getContentFile(`${filePath}.md`);
-
-    try {
-      const {data, content} = matter(contentFile);
-      return {
-        data,
-        content
-      };
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
-  
-  if(contentDir.includes("json")) {
-    contentFile = await getContentFile(`${filePath}.json`);
-
-    try {
-      return JSON.parse(contentFile);
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
+  const filePath = `${contentDir}${id}`;
+  if(contentDir.includes("md")) return await getMdFile(`${filePath}.md`);
+  if(contentDir.includes("json")) return await getJsonFile(`${filePath}.json`);
 }
 
 export const getContentByPath = async ({contentDir, fileName, fields = []}) => {
-  const contentFile = await getContentFile(`${contentDir}${fileName}`);
-
-  if(contentDir.includes("md")) {
-    try {
-      const {data, content} = matter(contentFile);
-      return {
-        data,
-        content
-      };
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
-  
-  if(contentDir.includes("json")) {
-    try {
-      return JSON.parse(JSON.stringify(contentFile));
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
+  const filePath = `${contentDir}${fileName}`;
+  if(contentDir.includes("md")) return await getMdFile(filePath);
+  if(contentDir.includes("json")) return await getJsonFile(filePath);
 }
 
 export const getContentList = async ({contentDir, fields = []}) => {
