@@ -1,0 +1,24 @@
+{
+  "facebook": {
+    "name": "Facebook",
+    "url": "https://facebook.com"
+  },
+  "instagram": {
+    "name": "Instagram",
+    "url": "https://instagram.com",
+    "apiUrl": "",
+    "apiAccessToken": ""
+  },
+  "linkedin": {
+    "name": "LinkedIn",
+    "url": "https://linkedin.com"
+  },
+  "twitter": {
+    "name": "Twitter",
+    "url": "https://twitter.com"
+  },
+  "youtube": {
+    "name": "YouTube",
+    "url": "https://youtube.com"
+  }
+}

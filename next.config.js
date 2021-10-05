@@ -16,26 +16,6 @@ module.exports = withFonts(withSass({
 		brandPrimaryColor: "#000000",
 		orgName: "Next Boilerplate",
 		orgNameShort: "Next",
-		socials: [
-			{
-				name: "facebook",
-				url: "https://facebook.com"
-			},
-			{
-				name: "instagram",
-				url: "https://instagram.com",
-				apiUrl: "",
-				apiAccessToken: ""
-			},
-			{
-				name: "linkedin",
-				url: "https://linkedin.com"
-			},
-			{
-				name: "youtube",
-				url: "https://youtube.com"
-			}
-		],
 		mdContentDir: `${contentDir}/md/`,
 		jsonContentDir: `${contentDir}/json/`
 	},
