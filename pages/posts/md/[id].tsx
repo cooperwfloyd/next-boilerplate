@@ -7,12 +7,12 @@ import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
 import {join} from "path";
 import marked from "marked";
 import ReactHtmlParser from "react-html-parser";
-import {getContentIds, getContentById} from "../../../src/scripts/getContent";
+import {getContentFiles, getContentById} from "../../../src/scripts/getContent";
 
 const mdContentDir = `${process.env.mdContentDir}posts/`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getContentIds((join(process.cwd(), mdContentDir)));
+  const posts = await getContentFiles({dir: (join(process.cwd(), mdContentDir)), extension: false});
 
   const postIds = posts.map(post => {
     return {

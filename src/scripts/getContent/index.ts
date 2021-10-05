@@ -10,27 +10,13 @@ const getContentFile = async filePath => {
   }
 }
 
-export const getContentIds = async dir => {
+export const getContentFiles = async ({dir, extension = true}) => {
   try {
     const contentDir = await fs.readdir(dir);
-    const contentIds = contentDir.map(item => {
-      return path.parse(item).name.toString();
+    return contentDir.map(item => {
+      if(extension) return path.parse(item).base.toString();
+      else return path.parse(item).name.toString();
     });
-
-    return contentIds;
-  } catch (error) {
-    throw new Error(error);
-  }
-}
-
-export const getContentFiles = async dir => {
-  try {
-    const contentDir = await fs.readdir(dir);
-    const contentIds = contentDir.map(item => {
-      return path.parse(item).base.toString();
-    });
-
-    return contentIds;
   } catch (error) {
     throw new Error(error);
   }
@@ -91,7 +77,7 @@ export const getContentByPath = async ({contentDir, fileName, fields = []}) => {
 
 export const getContentList = async ({contentDir, fields = []}) => {
   try {
-    const contentFiles = await getContentFiles(contentDir);
+    const contentFiles = await getContentFiles({dir: contentDir});
     return await Promise.all(contentFiles.map(fileName => getContentByPath({contentDir, fileName, fields}))); // Can append a .sort as well for ordering by date / title / etc
   } catch (error) {
     throw new Error(error);
