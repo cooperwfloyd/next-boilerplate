@@ -70,8 +70,8 @@ module.exports = withFonts(withSass({
   //       source: '/',
   //       headers: [
   //         {
-  //           key: 'x-custom-header',
-  //           value: 'my custom header value',
+  //           key: 'x-header-name',
+  //           value: 'header value',
   //         }
   //       ],
   //     },
