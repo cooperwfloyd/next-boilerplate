@@ -5,15 +5,11 @@ const contentDir = "src/content";
 
 module.exports = withFonts(withSass({
 	env: {
-		analytics: {
-			googleAnalyticsID: "",
-		},
-		api: {
-			devDomain: "",
-			prodDomain: ""
-		},
+		apiDomainDev: "",
+		apiDomainProd: "",
 		domainName,
 		brandPrimaryColor: "#000000",
+		googleAnalyticsID: "",
 		orgName: "Next Boilerplate",
 		orgNameShort: "Next",
 		mdContentDir: `${contentDir}/md/`,
