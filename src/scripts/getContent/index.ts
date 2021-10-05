@@ -65,3 +65,28 @@ export const getContentList = async ({contentDir, fields = []}) => {
   }
 }
 
+// export const fetchWPApi = async ({url, query, variables = {}}) => { // Example https://github.com/vercel/next.js/blob/canary/examples/cms-wordpress/lib/api.js
+//   const headers = {
+//     "Content-Type": "application/json"
+//   };
+
+//   if(process.env.WORDPRESS_AUTH_REFRESH_TOKEN) headers["Authorization"] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`;
+
+//   const res = await fetch(url, {
+//     method: "POST",
+//     headers,
+//     body: JSON.stringify({
+//       query,
+//       variables,
+//     }),
+//   });
+
+//   const resData = await res.json();
+
+//   if(resData.errors) {
+//     console.error(resData.errors);
+//     throw new Error(resData.errors);
+//   }
+
+//   return resData.data;
+// }
