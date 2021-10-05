@@ -12,7 +12,7 @@ All of the project's environment variables are located in `next.config.js`. This
 
 ## Develop
 
-To spin up the dev server for this project, run `npm run dev`. This will start the dev server on port 3000.
+To spin up the dev server for this project, run `npm run dev` (usually runs a little slow the first time but is fine after that). This will start the dev server on port 3000.
 
 ## Build
 
