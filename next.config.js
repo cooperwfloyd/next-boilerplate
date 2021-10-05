@@ -2,7 +2,7 @@ const path = require("path");
 const withFonts = require("nextjs-fonts");
 const withSass = require("@zeit/next-sass");
 const domainName = "main.ds41na5e80skr.amplifyapp.com";
-const contentDir = "src/content/";
+const contentDir = "src/content";
 
 module.exports = withFonts(withSass({
 	env: {

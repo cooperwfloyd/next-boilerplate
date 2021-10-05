@@ -16,8 +16,6 @@ export const getStaticProps: GetStaticProps = async () => {
     ]
   });
 
-  console.log(allPosts);
-
   return {
     props: {
       pageTitle: "All Posts",
