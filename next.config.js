@@ -1,4 +1,3 @@
-const path = require("path");
 const withFonts = require("nextjs-fonts");
 const withSass = require("@zeit/next-sass");
 const domainName = "main.ds41na5e80skr.amplifyapp.com";
@@ -13,8 +12,8 @@ module.exports = withFonts(withSass({
 			devDomain: "",
 			prodDomain: ""
 		},
-		brandPrimaryColor: "#000000",
 		domainName,
+		brandPrimaryColor: "#000000",
 		orgName: "Next Boilerplate",
 		orgNameShort: "Next",
 		socials: [

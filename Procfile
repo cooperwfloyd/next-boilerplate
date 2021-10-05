@@ -1,1 +1,1 @@
-web: npm run export
+web: npm run deploy
