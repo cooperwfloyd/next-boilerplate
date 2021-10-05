@@ -39,21 +39,6 @@ module.exports = withFonts(withSass({
 		mdContentDir: `${contentDir}/md/`,
 		jsonContentDir: `${contentDir}/json/`
 	},
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/',
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
-	// i18n: { // If internationalization is needed
-	// 	locales: [
-	// 		"en-US"
-	// 	],
-	// 	defaultLocale: "en-US"
-	// },
 	images: {
 		domains: [
 			domainName,
@@ -77,5 +62,42 @@ module.exports = withFonts(withSass({
 		
 		return config;
 	},
-	webpack5: false
+	poweredByHeader: false,
+	webpack5: false,
+  // async headers() { // https://nextjs.org/docs/api-reference/next.config.js/headers
+  //   return [
+  //     {
+  //       source: '/',
+  //       headers: [
+  //         {
+  //           key: 'x-custom-header',
+  //           value: 'my custom header value',
+  //         }
+  //       ],
+  //     },
+  //   ]
+  // },
+  // async redirects() { // https://nextjs.org/docs/api-reference/next.config.js/redirects
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/',
+  //       permanent: true,
+  //     },
+  //   ]
+  // },
+  // async rewrites() { // https://nextjs.org/docs/api-reference/next.config.js/rewrites
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/'
+  //     },
+  //   ]
+  // },
+	// i18n: { // https://nextjs.org/docs/advanced-features/i18n-routing
+	// 	locales: [
+	// 		"en-US"
+	// 	],
+	// 	defaultLocale: "en-US"
+	// }
 }));

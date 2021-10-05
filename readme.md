@@ -8,7 +8,7 @@ Run `npm install` to install the project dependencies. Each NPM script except fo
 
 ## Config
 
-All of the project's environment variables are located in `next.config.js`. This is also where redirects and i18n options can be configured.
+All of the project's environment variables are located in `next.config.js`. This is also where redirects, rewrites, headers and i18n options can be configured.
 
 ## Develop
 
