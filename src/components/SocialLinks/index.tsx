@@ -1,12 +1,13 @@
+import socials from "../../content/socials.json";
+
 const SocialLinks = () => {
   return (
     <>
-      {process.env.instagramUrl ? <li><a href={process.env.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="instagram"><span tabIndex={-1}></span></a></li> : null}
-      {process.env.linkedinUrl ? <li><a href={process.env.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="linkedin"><span tabIndex={-1}></span></a></li> : null}
-      {process.env.pinterestUrl ? <li><a href={process.env.pinterestUrl} target="_blank" rel="noopener noreferrer" aria-label="pinterest"><span tabIndex={-1}></span></a></li> : null}
-      {process.env.tiktokUrl ? <li><a href={process.env.tiktokUrl} target="_blank" rel="noopener noreferrer" aria-label="tiktok"><span tabIndex={-1}></span></a></li> : null}
-      {process.env.youtubeUrl ? <li><a href={process.env.youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="youtube"><span tabIndex={-1}></span></a></li> : null}
-      {process.env.facebookUrl ? <li><a href={process.env.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="facebook"><span tabIndex={-1}></span></a></li> : null}
+      {socials.twitter.url && socials.twitter.name ? <li><a href={socials.twitter.url} target="_blank" rel="noopener noreferrer" aria-label={socials.twitter.name}><span tabIndex={-1}></span></a></li> : null}
+      {socials.facebook.url && socials.facebook.name ? <li><a href={socials.facebook.url} target="_blank" rel="noopener noreferrer" aria-label={socials.facebook.name}><span tabIndex={-1}></span></a></li> : null}
+      {socials.linkedin.url && socials.linkedin.name ? <li><a href={socials.linkedin.url} target="_blank" rel="noopener noreferrer" aria-label={socials.linkedin.name}><span tabIndex={-1}></span></a></li> : null}
+      {socials.instagram.url && socials.instagram.name ? <li><a href={socials.instagram.url} target="_blank" rel="noopener noreferrer" aria-label={socials.instagram.name}><span tabIndex={-1}></span></a></li> : null}
+      {socials.youtube.url && socials.youtube.name ? <li><a href={socials.youtube.url} target="_blank" rel="noopener noreferrer" aria-label={socials.youtube.name}><span tabIndex={-1}></span></a></li> : null}
     </>
   );
 }
