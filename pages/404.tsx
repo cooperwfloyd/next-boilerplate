@@ -3,6 +3,7 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import Meta from "../src/components/Meta";
 import ResponsiveNav from "../src/components/ResponsiveNav";
+import "./404.scss";
 
 const FourOhFour = () => {
   return (

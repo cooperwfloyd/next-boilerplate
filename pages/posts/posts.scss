@@ -1,4 +1,6 @@
-html.post {
+@import "../../src/styles/scss/01-config/index";
+
+html.posts {
   main {
     padding: #{$globalContainerPadding} #{$globalContainerPadding * 0.5};
     margin: 0;

@@ -1,4 +1,6 @@
 const withFonts = require("nextjs-fonts");
+const CompressionPlugin = require("compression-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const domainName = "main.ds41na5e80skr.amplifyapp.com";
 const contentDir = "src/content";
 
@@ -14,11 +16,13 @@ module.exports = withFonts({
 		mdContentDir: `${contentDir}/md/`,
 		jsonContentDir: `${contentDir}/json/`
 	},
+
 	images: {
 		domains: [
 			domainName,
 		]
 	},
+
 	webpack: config => {
     config.module.rules.push(
 			{
@@ -31,16 +35,29 @@ module.exports = withFonts({
 			{
 				test: /\.md$/i,
 				use: "raw-loader"
-			}
+			},
+      {
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      }
 		);
 
-		// !isServer ? config.node = {
-		// 	fs: "empty"
-		// } : null;
+		config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: `static/chunks/[name].${Date.now()}.css`,
+        chunkFilename: `static/chunks/[name].${Date.now()}.css`
+      }),
+      new CompressionPlugin({
+        test: /\.js$|\.css$|\.html$/
+      })
+    );
 		
 		return config;
 	},
-	poweredByHeader: false,
+
+  compress: true,
+	poweredByHeader: false
+
   // async headers() { // https://nextjs.org/docs/api-reference/next.config.js/headers
   //   return [
   //     {
@@ -54,6 +71,7 @@ module.exports = withFonts({
   //     },
   //   ]
   // },
+
   // async redirects() { // https://nextjs.org/docs/api-reference/next.config.js/redirects
   //   return [
   //     {
@@ -63,6 +81,7 @@ module.exports = withFonts({
   //     },
   //   ]
   // },
+
   // async rewrites() { // https://nextjs.org/docs/api-reference/next.config.js/rewrites
   //   return [
   //     {

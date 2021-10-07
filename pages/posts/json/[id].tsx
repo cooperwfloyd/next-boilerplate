@@ -6,6 +6,7 @@ import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
 import {join} from "path";
 import {getContentFiles, getContentById} from "../../../src/scripts/getContent";
+import "../post.scss";
 
 const jsonContentDir = `${process.env.jsonContentDir}posts/`;
 

@@ -6,6 +6,7 @@ import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Meta from "../../src/components/Meta";
 import Textarea from "../../src/components/Textarea";
 import {useInput} from "../../src/scripts/validations";
+import "./contact.scss";
 
 const ContactPage = () => {
   const {value: emailAddress, bind: bindEmailAddress} = useInput("", "email");

@@ -4,6 +4,7 @@ import Footer from "../src/components/Footer";
 import ResponsiveNav from "../src/components/ResponsiveNav";
 import Meta from "../src/components/Meta";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
+import "./index.scss";
 
 export const getStaticProps: GetStaticProps = async () => {
   return {

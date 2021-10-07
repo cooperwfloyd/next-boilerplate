@@ -6,6 +6,7 @@ import Meta from "../../src/components/Meta";
 import Link from "next/link";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
 import {getContentList} from "../../src/scripts/getContent";
+import "./posts.scss";
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPosts = await getContentList({
