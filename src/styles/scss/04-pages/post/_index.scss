@@ -1,10 +1,10 @@
 html.post {
   main {
-    padding: #{$globalContainerPadding} #{$globalContainerPadding / 2};
+    padding: #{$globalContainerPadding} #{$globalContainerPadding * 0.5};
     margin: 0;
 
     section {
-      padding: #{$globalContainerPadding / 2};
+      padding: #{$globalContainerPadding * 0.5};
     }
 
     h1 {

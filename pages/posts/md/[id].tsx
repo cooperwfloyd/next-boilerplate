@@ -5,8 +5,7 @@ import Footer from "../../../src/components/Footer";
 import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
 import {join} from "path";
-import marked from "marked";
-import ReactHtmlParser from "react-html-parser";
+import Markdown from "markdown-to-jsx";
 import {getContentFiles, getContentById} from "../../../src/scripts/getContent";
 
 const mdContentDir = `${process.env.mdContentDir}posts/`;
@@ -46,7 +45,7 @@ const PostPage = ({post}: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Header/>
       <main className="max-content-width">
         <section className="intro">
-          {ReactHtmlParser(marked(post.content))}
+          <Markdown>{post.content}</Markdown>
         </section>
       </main>
       <Footer/>

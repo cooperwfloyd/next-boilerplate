@@ -1,14 +1,13 @@
 const withFonts = require("nextjs-fonts");
-const withSass = require("@zeit/next-sass");
 const domainName = "main.ds41na5e80skr.amplifyapp.com";
 const contentDir = "src/content";
 
-module.exports = withFonts(withSass({
+module.exports = withFonts({
 	env: {
 		apiDomainDev: "",
 		apiDomainProd: "",
-		domainName,
 		brandPrimaryColor: "#000000",
+		domainName,
 		googleAnalyticsID: "",
 		orgName: "Next Boilerplate",
 		orgNameShort: "Next",
@@ -20,26 +19,25 @@ module.exports = withFonts(withSass({
 			domainName,
 		]
 	},
-	webpack: (config, {isServer}) => {
-    config.module.rules.push({
-			test: /\.svg$/,
-			issuer: {
-				test: /\.(js|ts)x?$/,
+	webpack: config => {
+    config.module.rules.push(
+			{
+				test: /\.svg$/,
+				use: ["@svgr/webpack"]
 			},
-			use: ["@svgr/webpack"]
-		}, {
-			test: /\.md$/i,
-			use: 'raw-loader',
-		});
+			{
+				test: /\.md$/i,
+				use: "raw-loader"
+			}
+		);
 
-		!isServer ? config.node = {
-			fs: "empty"
-		} : null;
+		// !isServer ? config.node = {
+		// 	fs: "empty"
+		// } : null;
 		
 		return config;
 	},
 	poweredByHeader: false,
-	webpack5: false,
   // async headers() { // https://nextjs.org/docs/api-reference/next.config.js/headers
   //   return [
   //     {
@@ -76,4 +74,4 @@ module.exports = withFonts(withSass({
 	// 	],
 	// 	defaultLocale: "en-US"
 	// }
-}));
+});

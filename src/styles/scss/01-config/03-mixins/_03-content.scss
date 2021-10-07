@@ -16,7 +16,7 @@
     //     padding: rem($em-base / 2);
     // }
 
-    padding: $globalContainerPadding / 2;
+    padding: $globalContainerPadding * 0.5;
   }
 
   @if($size == double) {

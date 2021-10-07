@@ -1,17 +1,19 @@
+@use "sass:math";
+
 @function remove-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, $number * 0 + 1);
   }
 
   @return $number;
 }
 
 @function em($px) {
-  @return #{$px/$em-base}em;
+  @return #{math.div($px, $em-base)}em;
 }
 
 @function rem($px) {
-  @return #{$px/$em-base}rem;
+  @return #{math.div($px, $em-base)}rem;
 }
 
 @function px($em) {
