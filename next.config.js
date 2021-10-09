@@ -26,7 +26,7 @@ module.exports = withFonts({
 	webpack: config => {
     config.module.rules.push(
 			{
-				test: /\.svg$/,
+				test: /\.svg$/i,
 				use: ['@svgr/webpack'],
 				issuer: {
 				 	and: [/\.(js|ts)x?$/]
@@ -48,7 +48,7 @@ module.exports = withFonts({
         chunkFilename: `static/chunks/[name].${Date.now()}.css`
       }),
       new CompressionPlugin({
-        test: /\.js$|\.css$|\.html$/
+        test: /\.js$|\.css$|\.html$/i
       })
     );
 		
