@@ -69,3 +69,11 @@
 .screen-reader-only {
   @include screen-reader-only;
 }
+
+.resize-transition-stopper {
+  .responsive-nav {
+    &, .nav {
+      transition: none !important;
+    }
+  }
+}
