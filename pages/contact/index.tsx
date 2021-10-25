@@ -5,7 +5,7 @@ import Input from "../../src/components/Input";
 import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Meta from "../../src/components/Meta";
 import Textarea from "../../src/components/Textarea";
-import {useInput} from "../../src/scripts/validations";
+import {useInput} from "../../src/lib/validations";
 import "./contact.scss";
 
 const ContactPage = () => {

@@ -5,7 +5,7 @@ import ResponsiveNav from "../../src/components/ResponsiveNav";
 import Meta from "../../src/components/Meta";
 import Link from "next/link";
 import {GetStaticProps, InferGetStaticPropsType} from "next";
-import {getContentList} from "../../src/scripts/getContent";
+import {getContentList} from "../../src/lib/getContent";
 import "./posts.scss";
 
 export const getStaticProps: GetStaticProps = async () => {

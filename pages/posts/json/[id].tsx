@@ -5,7 +5,7 @@ import Footer from "../../../src/components/Footer";
 import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
 import {join} from "path";
-import {getContentFiles, getContentById} from "../../../src/scripts/getContent";
+import {getContentFiles, getContentById} from "../../../src/lib/getContent";
 import "../post.scss";
 
 const jsonContentDir = `${process.env.jsonContentDir}posts/`;

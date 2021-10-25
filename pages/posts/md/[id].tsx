@@ -6,7 +6,7 @@ import Meta from "../../../src/components/Meta";
 import {GetStaticProps, GetStaticPaths, InferGetStaticPropsType} from "next";
 import {join} from "path";
 import Markdown from "markdown-to-jsx";
-import {getContentFiles, getContentById} from "../../../src/scripts/getContent";
+import {getContentFiles, getContentById} from "../../../src/lib/getContent";
 import "../post.scss";
 
 const mdContentDir = `${process.env.mdContentDir}posts/`;

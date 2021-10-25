@@ -8,7 +8,7 @@ Run `npm install` to install the project dependencies. Each NPM script except fo
 
 ## Config
 
-All of the project's environment variables are located in `next.config.js`. This is also where redirects, rewrites, headers and i18n options can be configured.
+All of the project's public environment variables are located in `next.config.js`. This is also where redirects, rewrites, headers and i18n options can be configured.
 
 ## Develop
 
@@ -29,3 +29,17 @@ The `/pages` directory contains all of the project's page files as well as globa
 The `/public` directory contains all of the project's static files such as images and fonts. This contents of this directory will simply be copied to the project's `/out` folder at build time.
 
 The `/src` directory contains every project file that is not a page or a static asset. This directory is used to house files for things such as components, content files, scripts and styles.
+
+## Headless WordPress
+
+### Environment
+
+Create a `.env` file on your root if you don't already have one and add the `WP_API_URL = {yoururl}/graphql` variable to your list. If you're testing with a local installation of WordPress, you'll likely want to use `http` instead of `https` since `fetch` doesn't like self-signed certificates. 
+
+### Plugins
+
+- <a href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank" rel="noopener noreferrer">Add WPGraphQL SEO</a>
+- <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener noreferrer">Advanced Custom Fields</a>
+- <a href="https://wordpress.org/plugins/wp-graphql/" target="_blank" rel="noopener noreferrer">WP GraphQL</a>
+- <a href="https://www.wpgraphql.com/extenstion-plugins/wpgraphql-for-advanced-custom-fields/" target="_blank" rel="noopener noreferrer">WPGraphQL for Advanced Custom Fields</a>
+- <a href="https://wordpress.org/plugins/wordpress-seo/" target="_blank" rel="noopener noreferrer">Yoast SEO</a>

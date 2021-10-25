@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const HomePage = ({pageDescription}) => {
+const HomePage = ({pageDescription}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Global className="home">
       <Meta description={pageDescription}/>

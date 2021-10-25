@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import setPageClasses from "../scripts/setPageClasses";
+import setPageClasses from "../lib/setPageClasses";
 
 const Global = props => {
   const [checkPageClasses, setCheckPageClasses] = useState(false);

@@ -14,7 +14,9 @@ module.exports = withFonts({
 		orgName: "Next Boilerplate",
 		orgNameShort: "Next",
 		mdContentDir: `${contentDir}/md/`,
-		jsonContentDir: `${contentDir}/json/`
+		jsonContentDir: `${contentDir}/json/`,
+    wpPagesDir: "/",
+    wpPostsDir: "/posts/"
 	},
 
 	images: {
