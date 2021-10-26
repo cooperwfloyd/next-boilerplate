@@ -83,10 +83,7 @@ export const fetchWPApi = async ({query = ``, variables = {}}) => { // Example h
 
   const resData = await res.json();
 
-  if(resData.errors) {
-    console.error(resData);
-    throw new Error(resData);
-  }
+  if(resData.errors) console.error(resData);
 
   return resData.data;
 }
@@ -143,7 +140,7 @@ const defaultWPQuery = `
 export const getWPPage = async ({id, query}) => {
   return await fetchWPApi({query: `
     query Page {
-      page(id: "${process.env.wpPagesDir}${id}", idType: URI) {
+      page(id: "${process.env.wpPagesDir}${Array.isArray(id) ? id.join('/') : id}", idType: URI) {
         ${query || defaultWPQuery}
       }
     }
@@ -170,23 +167,41 @@ export const getAllWPPosts = async ({query}) => {
   `});
 }
 
-export const getAllWPPageIds = async () => {
+export const getAllWPPageIds = async ({childPages = true, exclude = []} = {}) => {
   const data = await fetchWPApi({query: `
     query PageIds {
       pages {
         nodes {
           slug
+          parent {
+            node {
+              slug
+            }
+          }
         }
       }
     }
   `});
 
-  return data.pages.nodes.map(page => {
-    return {
-      params: {
-        id: page.slug
+  return data.pages.nodes.filter(page => exclude && !exclude.includes(page.slug) && !exclude.includes(page.parent?.node?.slug)).map(page => {
+    if(childPages) {
+      const id = [];
+      const parentSlug = page.parent?.node?.slug;
+      parentSlug && id.push(parentSlug);
+      id.push(page.slug);
+
+      return {
+        params: {
+          id
+        }
       }
-    };
+    } else {
+      return {
+        params: {
+          id: page.slug
+        }
+      }
+    }
   });
 }
 

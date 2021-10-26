@@ -65,6 +65,8 @@ The functions used to pull data from WordPress include `getWPPage`, `getWPPost`,
 
 This example can be used in any dynamic route in the `pages` directory (ex. `[id]`, `[...id]`). If you're using this example with a directory-specific `[id]` route, you'll need to add an argument of `{childPages: false}` to the `getAllWPPageIds` function.
 
+If you want to exclude any auto-generated routes from the `getStaticPaths` list, add an argument of `{exclude: ["path-to-page", "path-to-other-page"]}` to `getAllWPPageIds`.
+
 ```
 import Global from "../src/components";
 import ResponsiveNav from "../src/components/ResponsiveNav";
@@ -140,4 +142,3 @@ const Page = ({
 
 export default Page;
 ```
-
