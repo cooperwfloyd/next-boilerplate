@@ -61,6 +61,7 @@ Create a `.env` file on your root if you don't already have one and add the `WP_
 - <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener noreferrer">Advanced Custom Fields</a>
 - <a href="https://wordpress.org/plugins/wp-graphql/" target="_blank" rel="noopener noreferrer">WP GraphQL</a>
 - <a href="https://www.wpgraphql.com/extenstion-plugins/wpgraphql-for-advanced-custom-fields/" target="_blank" rel="noopener noreferrer">WPGraphQL for Advanced Custom Fields</a>
+- <a href="https://wordpress.org/plugins/wp-migrate-db/" target="_blank" rel="noopener noreferrer">WP Migrate DB (Pro Version)</a>
 - <a href="https://wordpress.org/plugins/wordpress-seo/" target="_blank" rel="noopener noreferrer">Yoast SEO</a>
 
 ### Data Fetching
