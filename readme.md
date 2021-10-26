@@ -26,7 +26,16 @@ This project optionally uses TypeScript. To turn TypeScript on for any JS file, 
 
 ### Pages
 
-The `/pages` directory contains all of the project's page files as well as global `_app` and `_document` files. Only the page itself should be included here and not any additional files such as components or assets.
+The `pages` directory contains all of the project's page files as well as global `_app` and `_document` files. Only the page itself and any page-specific CSS files should be included here and not any additional files such as components or assets.
+
+#### Routing
+
+Next.JS has built-in routing based on how you name your file. Below are examples in this project of how specific and dynamic routes are generated. These routes are specified per sub-directory in the `pages` directory, so any routes placed further down the tree will override any previous routes.
+
+- **High specificity:** The `pages` directory includes an `index` file, which will match the home page (ex. `/`).
+- **Medium specificity:** The `pages` directory also includes an `[id]` file that will match any routes other than the `index` page directly inside the directory (ex. `/sample-page`).
+- **Low specificity:** The `pages` directory also includes a `[...id]` file that will match any routes other than the `index` page in any sub-directories (ex. `/sample-page/sub-page`).
+- **Catch-all specificity:** If you want a universal catch-all route (matches `/`, `/sample-page`, `sample-page/sub-page`, use the `[[...id]]` convention to name your file. This file will override all of the above routes and Next.JS will crash if you attempt to use any other routes in a directory with this route.
 
 ### Static Files
 
@@ -52,7 +61,9 @@ Create a `.env` file on your root if you don't already have one and add the `WP_
 
 ### Data Fetching
 
-The functions used to pull data from WordPress include `getWPPage`, `getWPPost`, `getAllWPPosts`, `getAllWPPageIds` and `getAllWPPostIds`. Since all of these functions are fetching data, make sure to wrap them in an `async` function and `await` their response. Below is an example page that uses these functions to pass props to a page, destructures those props for use as variables in the page, generates static HTML and generates a static path to the page. This example can be used in any page file in the `pages` directory.
+The functions used to pull data from WordPress include `getWPPage`, `getWPPost`, `getAllWPPosts`, `getAllWPPageIds` and `getAllWPPostIds`. Since all of these functions are fetching data, make sure to wrap them in an `async` function and `await` their response. Below is an example page that uses these functions to pass props to a page, destructures those props for use as variables in the page, generates static HTML and generates a static path to the page.
+
+This example can be used in any dynamic route in the `pages` directory (ex. `[id]`, `[...id]`). If you're using this example with a directory-specific `[id]` route, you'll need to add an argument of `{childPages: false}` to the `getAllWPPageIds` function.
 
 ```
 import Global from "../src/components";
