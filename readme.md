@@ -33,8 +33,8 @@ The `pages` directory contains all of the project's page files as well as global
 Next.JS has built-in routing based on how you name your file. Below are examples in this project of how specific and dynamic routes are generated. These routes are specified per sub-directory in the `pages` directory, so any routes placed further down the tree will override any previous routes.
 
 - **High specificity:** The `pages` directory includes an `index` file, which will match the home page (ex. `/`).
-- **Medium specificity:** The `pages` directory also includes an `[id]` file that will match any routes other than the `index` page directly inside the directory (ex. `/sample-page`).
-- **Low specificity:** The `pages` directory also includes a `[...id]` file that will match any routes other than the `index` page in any sub-directories (ex. `/sample-page/sub-page`).
+- **Medium specificity:** The `pages` directory also includes an `[id]` file that will match any routes other than the `index` page directly inside the directory (ex. `/sample-page` This route will create a conflict with the `[...id]` route if they are both using the same list of paths in `getStaticPaths`.).
+- **Low specificity:** The `pages` directory also includes a `[...id]` file that will match any routes other than the `index` page in any sub-directories (ex. `/sample-page` and `/sample-page/sub-page`) This route will create a conflict with the `[id]` route if they are both using the same list of paths in `getStaticPaths`.
 - **Catch-all specificity:** If you want a universal catch-all route (matches `/`, `/sample-page`, `sample-page/sub-page`, use the `[[...id]]` convention to name your file. This file will override all of the above routes and Next.JS will crash if you attempt to use any other routes in a directory with this route.
 
 ### Static Files
@@ -140,3 +140,4 @@ const Page = ({
 
 export default Page;
 ```
+
