@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  padding: #{rem($em-base * 2)} #{$globalContainerPadding};
+  padding: math.div($globalContainerPadding, 2) $globalContainerPadding;
 
   @media(max-width: rem($tp)) {
     padding: $globalContainerPadding;

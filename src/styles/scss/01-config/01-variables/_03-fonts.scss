@@ -1,7 +1,6 @@
-$globalFontSize: $em-base;
-$globalMinFontSize: $em-base;
-$globalMaxFontSize: $em-base;
-$globalLeadFontSize: $globalFontSize + 1;
+$baseFontSize: $emBase;
+$globalMinFontSize: $emBase;
+$globalMaxFontSize: $emBase;
 
 $global-light-body-font-weight: lighter;
 $global-regular-body-font-weight: normal;

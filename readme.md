@@ -34,7 +34,9 @@ To keep styles as close to components as possible, place a `.scss` file in your 
 
 ### Typography
 
-Use Sass to `@include fluidType(16, 24)` for type sizes. This mixin sets your minimum desired font size for an element (16), and maximum desired font size for an element (24) in pixel values. This mixin includes breakpoints as well that cause scaling to stop below `$globalMinContentWidth` and above `$globalMaxContentWidth` by default, but these can be overridden by adding min and max pixel values to the function like `@include fluidType(16, 24, $ml, $lf)`.
+Use Sass to `@include fluidType(16, 24)` for fluid type sizes. This mixin sets your minimum desired font size for an element (16), and maximum desired font size for an element (24) in pixel values. This mixin includes breakpoints as well that cause scaling to stop below `$globalMinContentWidth` and above `$globalMaxContentWidth` by default, but these can be overridden by adding min and max pixel values to the function like `@include fluidType(16, 24, $ml, $lf)`.
+
+For setting non-fluid `em` and `rem` values, use the `em()` and `rem()` functions to convert pixel values to `em` and `rem` values (ex. `em(16)` returns `1em`).
 
 ## Structure
 

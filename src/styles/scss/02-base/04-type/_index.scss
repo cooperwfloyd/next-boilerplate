@@ -1,7 +1,7 @@
 html {
   font-family: $body-font-stack;
-  font-size: em($globalFontSize);
-  line-height: em($globalFontSize * 2);
+  font-size: em($baseFontSize);
+  line-height: em($baseFontSize * 1.5);
   @include regular-body-font;
 }
 
@@ -15,27 +15,27 @@ h2, h3, h4, h5, h6 {
 
 h1, .h1 {
   font-family: $heading-font-stack;
-  @include variable-font(4em, 7em);
+  @include fluidType(64, 80);
   line-height: 1.2em;
 }
 
 h2, .h2 {
-  @include variable-font(3em, 5em);
+  @include fluidType(48, 64);
   line-height: 1.4em;
 }
 
 h3, .h3 {
-  @include variable-font(1.5em, 1.75em);
+  @include fluidType(32, 48);
 }
 
 h4, .h4 {
-  @include variable-font(1.25em, 1.5em);
+  @include fluidType(24, 32);
 }
 
 h5, .h5 {
-  @include variable-font(1em, 1.25em);
+  @include fluidType(20, 24);
 }
 
 h6, .h6 {
-  font-size: 1em;
+  @include fluidType(16, 20);
 }

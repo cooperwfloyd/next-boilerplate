@@ -1,19 +1,19 @@
 @mixin container-padding($size: full) {
   @if($size == full) {
-    // padding: rem($em-base * 2);
+    // padding: rem($emBase * 2);
 
     // @media(max-width: rem($globalContainerPaddingBreakpoint)) {
-    //     padding: rem($em-base);
+    //     padding: rem($emBase);
     // }
 
     padding: $globalContainerPadding;
   }
 
   @if($size == half) {
-    // padding: rem($em-base);
+    // padding: rem($emBase);
 
     // @media(max-width: rem($globalContainerPaddingBreakpoint)) {
-    //     padding: rem($em-base / 2);
+    //     padding: rem($emBase / 2);
     // }
 
     padding: $globalContainerPadding * 0.5;

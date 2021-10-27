@@ -9,43 +9,14 @@
 @mixin body-font-stack {font-family: $body-font-stack;}
 @mixin heading-font-stack {font-family: $heading-font-stack;}
 
-@mixin variableFontSize-rule($newMinFontSize-number, $newMaxFontSize-number) {
-  font-size: calc(#{em($newMinFontSize-number)} + (#{$newMaxFontSize-number} - #{$newMinFontSize-number}) * ((100vw - #{rem($globalMinContentWidth)}) / (#{$globalMaxContentWidth} - #{$globalMinContentWidth})));
-}
-
-@mixin variable-font($min: $globalMinFontSize, $max: $globalMaxFontSize) {
-  $newMinFontSize-number: 0; // Creating min that will be returned
-  $newMaxFontSize-number: 0; // Creating max that will be returned
-
-  @if unit($min) == "" { // Checks for a unit on the parameter
-    $newMinFontSize-number: $min; // Assigns number if there is no unit
-  } @else if unit($min) == "em" { // Removes unit and returns number
-    $newMinFontSize-number: remove-unit($min * $em-base);
-  } @else { // Removes unit and returns number
-    $newMinFontSize-number: remove-unit($min);
-  }
-
-  @if unit($max) == "" { // Checks for a unit on the parameter
-    $newMaxFontSize-number: $max; // Assigns number if there is no unit
-  } @else if unit($max) == "em" { // Removes unit and returns number
-    $newMaxFontSize-number: remove-unit($max * $em-base);
-  } @else { // Removes unit and returns number
-    $newMaxFontSize-number: remove-unit($max);
-  }
-
-  @include variableFontSize-rule($newMinFontSize-number, $newMaxFontSize-number); // Returns font-size to be used in the breakpoints
-
-  @media (max-width: rem($globalMinContentWidth)) { // Min font size is met at min content width
-    font-size: em($newMinFontSize-number);
-  }
-
-  @media (min-width: rem($globalMaxContentWidth)) { // Max font size is met at max content width
-    font-size: em($newMaxFontSize-number);
-  }
+@mixin fluidType($minFontSize: $baseMinFontSize, $maxFontSize: $baseMaxFontSize, $minWidth: $globalMinContentWidth, $maxWidth: $globalMaxContentWidth) {
+  font-size: calc(#{em($minFontSize)} + (#{$maxFontSize} - #{$minFontSize}) * ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})));
+  @media (max-width: #{$minWidth}px) {font-size: em($minFontSize);}
+  @media (min-width: #{$maxWidth}px) { font-size: em($maxFontSize);}
 }
 
 @mixin lead-font {
-  @include variable-font(1.25em, 1.5em);
+  @include fluidType(20, 24);
   font-weight: 500;
   line-height: 1.75em;
 }

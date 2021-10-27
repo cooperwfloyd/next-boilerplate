@@ -10,7 +10,7 @@ html.post {
     }
 
     h1 {
-      @include variable-font(2em, 4em);
+      @include fluidType(32, 64);
       margin-bottom: $globalContainerPadding;
     }
   }

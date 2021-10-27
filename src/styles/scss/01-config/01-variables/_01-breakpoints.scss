@@ -3,9 +3,9 @@ $ml: 624; // Mobile landscape
 $tp: 768; // Tablet portrait
 $tl: 1024; // Tablet landscape
 $dk: 1280; // Desktop
-$lf: 1920; // Large format
+$lf: 1440; // Large format
 
-$headerNavBreakpoint: 56 * $em-base;
+$headerNavBreakpoint: 56 * $emBase;
 $footerNavBreakpoint: $dk;
 
 $globalContainerPadding: 4%;

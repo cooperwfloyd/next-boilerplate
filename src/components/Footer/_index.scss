@@ -1,6 +1,4 @@
 footer {
-  font-family: $alt-font-stack;
-
   .footer-nav {
     display: flex;
     justify-content: center;
@@ -22,7 +20,7 @@ footer {
   }  
 
   .copyright {
-    padding: 0 $globalContainerPadding 2em $globalContainerPadding;
+    padding: 0 $globalContainerPadding 2rem $globalContainerPadding;
     font-size: 90%;
     text-align: center;
   }

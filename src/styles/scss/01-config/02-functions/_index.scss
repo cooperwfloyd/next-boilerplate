@@ -9,17 +9,17 @@
 }
 
 @function em($px) {
-  @return #{math.div($px, $em-base)}em;
+  @return #{math.div($px, $emBase)}em;
 }
 
 @function rem($px) {
-  @return #{math.div($px, $em-base)}rem;
+  @return #{math.div($px, $emBase)}rem;
 }
 
 @function px($em) {
-  @return #{$em * $em-base}px;
+  @return #{$em * $emBase}px;
 }
 
 @function em-px-num($em) {
-  @return $em * $em-base;
+  @return $em * $emBase;
 }

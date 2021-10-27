@@ -3,7 +3,7 @@
 html.contact {
   main {
     h1 {
-      @include variable-font(3em, 6em);
+      @include fluidType(48, 96);
       margin-bottom: .5em;
     }
   }
