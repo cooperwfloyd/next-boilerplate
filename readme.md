@@ -22,15 +22,25 @@ To build this project, run `npm run deploy`. This will export your project into 
 
 This project optionally uses TypeScript. To turn TypeScript on for any JS file, use the extension `.ts` — or `.tsx` for JSX files. To remove TypeScript from use in a file, change the extension to `.js` or `.jsx` and remove the file's TypeScript code.
 
+## Styles
+
+### Page-specific Styles
+
+Place a `.scss` file in the same directory as your page and then import it into your page with `import "./filename.scss";`.
+
+### Component Styles
+
+To keep styles as close to components as possible, place a `.scss` file in your component's folder and import it into `/src/styles/scss/03-components/_index.scss` like `@import "../../../components/Footer/index";`.
+
+### Typography
+
+Use Sass to `@include fluidType(16, 24)` for type sizes. This mixin sets your minimum desired font size for an element (16), and maximum desired font size for an element (24) in pixel values. This mixin includes breakpoints as well that cause scaling to stop below `$globalMinContentWidth` and above `$globalMaxContentWidth` by default, but these can be overridden by adding min and max pixel values to the function like `@include fluidType(16, 24, $ml, $lf)`.
+
 ## Structure
 
 ### Pages
 
 The `pages` directory contains all of the project's page files as well as global `_app` and `_document` files. Only the page itself and any page-specific CSS files should be included here and not any additional files such as components or assets.
-
-#### Import Page-specific CSS
-
-Place a `.scss` file in the same directory as your page and then import it into your page with `import "./filename.scss";`.
 
 #### Routing
 
@@ -58,10 +68,11 @@ Create a `.env` file on your root if you don't already have one and add the `WP_
 ### Plugins
 
 - <a href="https://wordpress.org/plugins/add-wpgraphql-seo/" target="_blank" rel="noopener noreferrer">Add WPGraphQL SEO</a>
-- <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank" rel="noopener noreferrer">Advanced Custom Fields</a>
+- <a href="https://www.advancedcustomfields.com/pro/" target="_blank" rel="noopener noreferrer">Advanced Custom Fields Pro</a>
 - <a href="https://wordpress.org/plugins/wp-graphql/" target="_blank" rel="noopener noreferrer">WP GraphQL</a>
 - <a href="https://www.wpgraphql.com/extenstion-plugins/wpgraphql-for-advanced-custom-fields/" target="_blank" rel="noopener noreferrer">WPGraphQL for Advanced Custom Fields</a>
-- <a href="https://wordpress.org/plugins/wp-migrate-db/" target="_blank" rel="noopener noreferrer">WP Migrate DB (Pro Version)</a>
+- <a href="https://deliciousbrains.com/wp-migrate-db-pro/" target="_blank" rel="noopener noreferrer">WP Migrate DB Pro</a>
+- <a href="https://deliciousbrains.com/wp-migrate-db-pro/" target="_blank" rel="noopener noreferrer">WP Migrate DB Media Files Pro</a>
 - <a href="https://wordpress.org/plugins/wordpress-seo/" target="_blank" rel="noopener noreferrer">Yoast SEO</a>
 
 ### Data Fetching
