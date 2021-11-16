@@ -40,7 +40,16 @@ module.exports = withFonts({
 			},
       {
         test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader", 
+            options: {
+              url: false
+            }
+          },
+          "sass-loader"
+        ]
       }
 		);
 
