@@ -17,5 +17,5 @@ jobs:
       - name: Run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.8.x
-          npm run start
+          npm run start & npx wait-on http://localhost:3000
           lhci autorun
