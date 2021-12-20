@@ -4,7 +4,10 @@ module.exports = {
       preset: 'lighthouse:no-pwa',
     },
     collect: {
-      staticDistDir: './.next'
+      url: [
+        'http://localhost:3000',
+      ],
+      'numberOfRuns': 3
     },
     upload: {
       target: 'temporary-public-storage',
