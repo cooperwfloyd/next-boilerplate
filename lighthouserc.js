@@ -1,8 +1,5 @@
 module.exports = {
   ci: {
-    assert: {
-      'preset': 'lighthouse:no-pwa'
-    },
     collect: {
       url: [
         'http://localhost:3000',
