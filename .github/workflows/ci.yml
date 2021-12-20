@@ -6,16 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
+      - name: Use Node v14
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: npm install, build
+      - name: Build project and start server
         run: |
           npm install
           npm run build
-          npm run start
-      - name: run Lighthouse CI
+      - name: Run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.8.x
+          npm run start
           lhci autorun
